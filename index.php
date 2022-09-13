@@ -9,7 +9,7 @@ if(array_key_exists('arquivo', $_FILES)){
     if(!is_jpg($f['name'])){
         echo '<p style="color: red">Erro! Envie apenas JPGs</p>';
     } else {
-        rename($f['tmp_name'], './img/' . date('U') . $f['name']);
+        rename($f['tmp_name'],'./img/' . date('U') . $f['name']);
     }
 }
 ?>
@@ -20,3 +20,10 @@ if(array_key_exists('arquivo', $_FILES)){
     <input name="arquivo" type="file" />
     <a href="resultado.php"><button type="submit">Enviar</button></a>
 </form>
+<?php
+$fotos = scandir('img');
+foreach($fotos as $f){
+    if(is_jpg($f)){
+        echo '<img src="/img/'.$f.'" width="300" "height:auto"/>';
+    }
+}
