@@ -10,7 +10,7 @@
 <body>
     <header>
 
-<h1>Tratamento de Imagem</h1>
+    <h1>Adicione uma foto: </h1>
     </header>
     <main>
 <?php 
@@ -29,19 +29,17 @@ if(array_key_exists('arquivo', $_FILES)){
 }
 ?>
 
-<h1>Adicione uma foto: </h1>
+
 <form enctype="multipart/form-data" method="POST">
     
     <input name="arquivo" type="file" />
-    <a href="resultado.php"><button type="submit">Enviar</button></a>
+    <button type="submit">Enviar</button>
 </form>
 <?php
 $fotos = scandir('img');
-foreach($fotos as $f){
     if(is_jpg($f)){
         echo '<img src="/img/'.$f.'" width="300" "height:auto"/>';
     }
-}
 ?>
 </main>
 <footer>
