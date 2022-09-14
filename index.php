@@ -15,6 +15,10 @@
     <main>
 <?php 
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 function is_jpg($name){
     return substr( $name, -4 ) === '.jpg';
 }
@@ -24,7 +28,7 @@ if(array_key_exists('arquivo', $_FILES)){
     if(!is_jpg($f['name'])){
         echo '<p style="color: red">Erro! Envie apenas JPGs</p>';
     } else {
-        rename($f['tmp_name'],'./img/' . date('U') . $f['name']);
+        rename($f['tmp_name'], 'img/' . date('U') . $f['name']);
     }
 }
 ?>
@@ -37,9 +41,15 @@ if(array_key_exists('arquivo', $_FILES)){
 </form>
 <?php
 $fotos = scandir('img');
+echo "<pre>";
+print_r ($fotos);
+echo "</pre>";
+
+foreach($fotos as $f){
     if(is_jpg($f)){
-        echo '<img src="/img/'.$f.'" width="300" "height:auto"/>';
+        echo '<img src= img/'.$f.'>';
     }
+} 
 ?>
 </main>
 <footer>
