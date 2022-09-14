@@ -8,14 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    $fotos = scandir('img');
+    foreach($fotos as $f){
+if(is_jpg($f)){
+        echo '<img src= img/'.$f.'>';
+   }
+}
     
-
-
-
-
-
-
-
-
+?>
 </body>
 </html>
