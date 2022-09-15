@@ -18,10 +18,20 @@ main{
     width:80%;
     margin:auto;
 }
+ #especial{
+    background-image:url('besouro2.jpg');
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-size:60%;
+}
 img{
-    width:300px;
-    height:300px;
-    border:#FFFF00 1px solid
+    width:15%;
+    height:auto;
+    display:flex;
+    padding:0;
+    border-radius: 100%;
+    position:absolute;
+    margin:50px;
 }
 form{
     margin:auto;
