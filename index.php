@@ -26,7 +26,6 @@ if(array_key_exists('arquivo', $_FILES)){
     } else {
         rename($f['tmp_name'], 'img/' . date('U') . $f['name']);
         header("location: exibir-foto.php");
-
     }
 }
 ?>
